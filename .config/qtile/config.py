@@ -6,6 +6,7 @@ from libqtile import hook
 
 import os
 import subprocess
+import random
 
 from dataclasses import dataclass
 
@@ -45,7 +46,6 @@ my_theme = Theme(2, 4, 25, monokai)
 
 @hook.subscribe.startup_once
 def autostart():
-    subprocess.Popen(["nitrogen", "--restore"])
     subprocess.Popen(["picom", "--config", home + "/.config/picom/picom.conf"])
 
 mod = "mod4"
@@ -266,8 +266,25 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+def get_random_wallpaper(wallpaper_type: str) -> str:
+    wallpaper_dir = "/usr/share/backgrounds/"
+    normal_dir = "normal/"
+    anime_dir = "anime/"
+    if wallpaper_type == "normal":
+        wallpaper_dir = wallpaper_dir + normal_dir
+    elif wallpaper_type == "anime":
+        wallpaper_dir = wallpaper_dir + anime_dir
+    else:
+        return "invalid wallpaper_type"
+    wallpapers = os.listdir(wallpaper_dir)
+    num = random.randint(0, len(wallpapers)-1)
+    return wallpaper_dir + wallpapers[num]
+
 screens = [
     Screen(
+        #wallpaper="/usr/share/backgrounds/normal/fate-city.png",
+        wallpaper=get_random_wallpaper("normal"),
+        wallpaper_mode="fill",
         top=bar.Bar(
             [
                 widget.GroupBox(
