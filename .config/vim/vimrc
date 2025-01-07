@@ -1,0 +1,73 @@
+" leader key, custom keybinds
+let mapleader = " "
+
+" window navigation
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
+nnoremap <leader>v <c-w>v
+nnoremap <leader>s <c-w>s
+nnoremap <leader>q <c-w>q
+
+" file explorer
+nnoremap <leader>f :Ex<CR>
+
+" jump to definition
+nnoremap <leader>i [<c-i>
+
+" fake fzf with find
+set path+=**
+set wildmenu
+
+" ctags
+" ^] jump tag under cursor
+" g^] jump from ambiguous tag
+" ^t jump back a tag
+"
+" ^w^i for definition in separate window
+" [i for definition in bar
+" [<c-i> jump to definition in same window
+" maybe remap to <leader>i
+command! GenTags !ctags -R .
+
+" autocomplete
+" ^n to start and forward in list
+" ^p back in list
+" ^y to accept
+" ^e to exit
+" ^x^n for just this file
+" ^x^f for filenames
+" ^x^j for tags only
+
+" netrw
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+
+" basic configuration options
+set backspace=indent,eol,start
+set ruler
+syntax enable " syntax highlighting
+set number " line numbers
+set relativenumber " relative line numbers
+
+" there shouldn't be this many options for fucking tabs
+set autoindent " new lines carry indent of previous line
+set expandtab " tabs to spaces
+set shiftround " shift lines by multiples of shiftwidth
+set shiftwidth=4 " indent using 4 spaces
+set smarttab " when press tab, insert tabstop number of spaces
+set tabstop=4 " number of tabstop spaces
+set softtabstop=4 " idk
+
+set wrap " wrap long lines
+set linebreak " try to wrap without breaking words
+set encoding=utf-8 " encode in utf-8
+set scrolloff=8 " minimum lines above and below cursor
+
+set cursorline " horizontal line under cursor 
+set lazyredraw " don't redraw on scripts etc
+
+set laststatus=2 " always show status line, mainly for file and filepath
+set splitright " open windows to the right
+set splitbelow " open windows to the bottom
