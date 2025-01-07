@@ -260,7 +260,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Liberation Mono",
+    font="LiberationMono",
     fontsize=13,
     padding=5,
 )
@@ -360,6 +360,8 @@ floating_layout = layout.Floating(
         Match(wm_class="pavucontrol"),
         Match(wm_class="Godot_Engine"),
         Match(wm_class="snes9x-gtk"),
+        Match(wm_class="desmume"),
+        Match(title="testing"),
     ]
 )
 auto_fullscreen = True
