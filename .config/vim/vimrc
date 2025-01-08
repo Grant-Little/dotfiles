@@ -1,5 +1,6 @@
 " leader key, custom keybinds
 let mapleader = " "
+let maplocalleader = "\\"
 
 " window navigation
 nnoremap <leader>h <c-w>h
@@ -43,6 +44,10 @@ command! GenTags !ctags -R .
 " netrw
 let g:netrw_banner=0
 let g:netrw_liststyle=3
+
+" snippets
+nnoremap <localleader>cbuild :-1read $HOME/.config/vim/.cbuild.skel.sh<CR>4jwla
+nnoremap <localleader>pymain :-1read $HOME/.config/vim/.pymain.skel.py<CR>
 
 " basic configuration options
 set backspace=indent,eol,start
