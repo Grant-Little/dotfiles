@@ -7,8 +7,8 @@ nnoremap <leader>h <c-w>h
 nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
 nnoremap <leader>l <c-w>l
-nnoremap <leader>v <c-w>v
-nnoremap <leader>s <c-w>s
+nnoremap <leader>v :vne<CR>
+nnoremap <leader>s :new<CR>
 nnoremap <leader>q <c-w>q
 
 " file explorer
