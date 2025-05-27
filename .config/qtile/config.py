@@ -283,7 +283,7 @@ def get_random_wallpaper(wallpaper_type: str) -> str:
 screens = [
     Screen(
         #wallpaper="/usr/share/backgrounds/normal/fate-city.png",
-        wallpaper=get_random_wallpaper("normal"),
+        wallpaper=get_random_wallpaper("anime"),
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -355,10 +355,8 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
         # added by user
-        Match(wm_class="Godot"),
         Match(wm_class="mGBA"),
         Match(wm_class="pavucontrol"),
-        Match(wm_class="Godot_Engine"),
         Match(wm_class="snes9x-gtk"),
         Match(wm_class="desmume"),
         Match(title="testing"),
